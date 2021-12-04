@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calculator {
+    height: 420px;
+    width: 300px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 70px 70px 70px 70px 70px 70px;
+    grid-template-areas: 
+    "display"
+    "row-1"
+    "row-2"
+    "row-3"
+    "row-4"
+    "row-5";
+    border: 5px solid black;
+    border-radius: 5px;
+}
+
+#display {
+    grid-area: display;
+    background-color: black;
+    color: white;
+    font-size: 60px;
+    text-align: right;
+}
+
+button {
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50px;
+    border: 1px solid black;
+}
+
+.operator {
+    background-color: orange;
+    color: white;
+}
+
+.clear,
+.negative,
+.percent {
+    background-color: gray;
+    color: black;
+}
+
+.number,
+.decimal {
+    background-color: rgb(92, 91, 91);
+    color: white;
+}
+
+.row-1,
+.row-2,
+.row-3,
+.row-4,
+.row-5 {
+    display: flex;
+}
+
+.number,
+.operator {
+    flex: 1;
+}
+
+.zero {
+    flex: 2.15 1 auto;
+}
+
+.row-1 {
+    grid-area: row-1;
+}
+
+.row-2 {
+    grid-area: row-2;
+}
+
+.row-3 {
+    grid-area: row-3;
+}
+
+.row-4 {
+    grid-area: row-4;
+}
+
+.row-5 {
+    grid-area: row-5;
+}
