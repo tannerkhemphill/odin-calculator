@@ -20,16 +20,16 @@ function negative(num) {
 
 function percent(num) {
     return num / 100;
-}
+};
 
 function operate(operator, num1, num2) {
-    if (operator === add) {
+    if (operator === '+') {
         return add(num1, num2);
     }
-    else if (operator === subtract) {
+    else if (operator === '-') {
         return subtract(num1, num2);
     }
-    else if (operator === multiply) {
+    else if (operator === '*') {
         return multiply(num1, num2);
     }
     else {
@@ -38,25 +38,58 @@ function operate(operator, num1, num2) {
 };
 
 let display = document.getElementById('display');
-let firstValue = null;
-let operator = null;
+let displayValue = '';
+let previousValue = 0;
+let previousOperator = '';
+let operatorPressed = false;
+let hasDecimal = false;
+
+function allClear() {
+    display.textContent = 0;
+    previousValue = 0;
+    previousOperator = '';
+    operatorPressed = false;
+    hasDecimal = false;
+}
 
 function numDisplay(num) {
-    if (parseInt(display.textContent) === 0) {
+    if ((operatorPressed || display.textContent === '0') && !hasDecimal) {
         display.textContent = num;
+        operatorPressed = false;
     }
     else {
-        if (display.textContent.length < 9) {
+        if (display.textContent.length < 10) {
             display.textContent += num;
         }
     }
 };
 
-function operatorDisplay() {
-    if (firstValue !== null) {
-        firstValue = operate(operator, firstValue, num);
-        display.textContent = firstValue;
+function operatorDisplay(operator) {
+    if (previousOperator !== '' && previousOperator !== '=') {
+        displayValue = operate(previousOperator, previousValue, parseInt(display.textContent));
+        if (displayValue.toString().length > 10) {
+            displayValue = displayValue.toString().substring(0, 10);
+        }
+        display.textContent = displayValue;
+        previousValue = parseInt(displayValue);
+        previousOperator = operator;
     }
+    else {
+        previousValue = parseInt(display.textContent);
+        previousOperator = operator;
+    }
+    operatorPressed = true;
+    hasDecimal = false;
 };
 
-numDisplay(999999999);
+function decimalDisplay() {
+    if (!hasDecimal) {
+        if (operatorPressed) {
+            display.textContent = '0.'
+        }
+        else {
+            display.textContent += '.';
+        }
+    hasDecimal = true;
+    }
+}

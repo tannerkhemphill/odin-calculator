@@ -12,33 +12,33 @@
     <div id="calculator">
         <div id="display">0</div>
         <div class="row row-1">
-            <button class="operator clear">AC</button>
+            <button onclick="allClear()" class="operator clear">AC</button>
             <button class="operator negative">+/-</button>
             <button class="operator percent">%</button>
-            <button class="operator divide">/</button>
+            <button onclick="operatorDisplay('/')" class="operator divide">/</button>
         </div>
         <div class="row row-2">
-            <button class="number seven">7</button>
-            <button class="number eight">8</button>
-            <button class="number nine">9</button>
-            <button class="operator multiply">*</button>
+            <button onclick="numDisplay(7)" class="number seven">7</button>
+            <button onclick="numDisplay(8)" class="number eight">8</button>
+            <button onclick="numDisplay(9)" class="number nine">9</button>
+            <button onclick="operatorDisplay('*')" class="operator multiply">*</button>
         </div>
         <div class="row row-3">
-            <button class="number four">4</button>
-            <button class="number five">5</button>
-            <button class="number six">6</button>
-            <button class="operator subtract">-</button>
+            <button onclick="numDisplay(4)" class="number four">4</button>
+            <button onclick="numDisplay(5)" class="number five">5</button>
+            <button onclick="numDisplay(6)" class="number six">6</button>
+            <button onclick="operatorDisplay('-')" class="operator subtract">-</button>
         </div>
         <div class="row row-4">
-            <button class="number one">1</button>
-            <button class="number two">2</button>
-            <button class="number three">3</button>
-            <button class="operator add">+</button>
+            <button onclick="numDisplay(1)" class="number one">1</button>
+            <button onclick="numDisplay(2)" class="number two">2</button>
+            <button onclick="numDisplay(3)" class="number three">3</button>
+            <button onclick="operatorDisplay('+')" class="operator add">+</button>
         </div>
         <div class="row row-5">
-            <button class="number zero">0</button>
-            <button class="operator decimal">.</button>
-            <button class="operator equals">=</button>
+            <button onclick="numDisplay(0)" class="number zero">0</button>
+            <button onclick="decimalDisplay()" class="operator decimal">.</button>
+            <button onclick="operatorDisplay('=')" class="operator equals">=</button>
         </div>
     </div>
 </body>
