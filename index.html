@@ -12,9 +12,9 @@
     <div id="calculator">
         <div id="display">0</div>
         <div class="row row-1">
-            <button onclick="allClear()" class="operator clear">AC</button>
-            <button class="operator negative">+/-</button>
-            <button class="operator percent">%</button>
+            <button onclick="allClear()" class="symbol clear">AC</button>
+            <button onclick="negativeDisplay()" class="symbol negative">+/-</button>
+            <button onclick="percentDisplay()" class="symbol percent">%</button>
             <button onclick="operatorDisplay('/')" class="operator divide">/</button>
         </div>
         <div class="row row-2">
@@ -37,7 +37,7 @@
         </div>
         <div class="row row-5">
             <button onclick="numDisplay(0)" class="number zero">0</button>
-            <button onclick="decimalDisplay()" class="operator decimal">.</button>
+            <button onclick="decimalDisplay()" class="symbol decimal">.</button>
             <button onclick="operatorDisplay('=')" class="operator equals">=</button>
         </div>
     </div>

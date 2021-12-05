@@ -5,12 +5,12 @@ body {
 }
 
 #calculator {
-    height: 420px;
+    height: 480px;
     width: 300px;
     background-color: black;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 70px 70px 70px 70px 70px 70px;
+    grid-template-rows: 80px 80px 80px 80px 80px 80px;
     grid-template-areas: 
     "display"
     "row-1"
@@ -51,7 +51,7 @@ button {
 
 .number,
 .decimal {
-    background-color: rgb(92, 91, 91);
+    background-color: #404040;
     color: white;
 }
 
@@ -61,10 +61,13 @@ button {
 .row-4,
 .row-5 {
     display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .number,
-.operator {
+.operator,
+.symbol {
     flex: 1;
 }
 
