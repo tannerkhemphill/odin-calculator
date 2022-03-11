@@ -162,3 +162,4 @@ document.querySelectorAll(".symbol").forEach(symbol =>
 document.querySelectorAll(".operator").forEach(operator => 
     operator.addEventListener("click", () => highlight(operator))
 );
+
